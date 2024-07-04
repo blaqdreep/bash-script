@@ -3,7 +3,7 @@ Introduction
 Managing user accounts and group assignments efficiently is crucial for system administrators. In this article, we'll explore how to automate these tasks using a Bash script on Ubuntu. This script ensures users are created, assigned to specified groups, and their actions logged securely.
 
 Script Overview
-The provided Bash script reads user and group information from a CSV file, creates groups if they don't exist, creates users if they are new, assigns users to groups, and logs all actions for traceability.
+The provided Bash script reads user and group information from a text file, creates groups if they don't exist, creates users if they are new, assigns users to groups, and logs all actions for traceability.
 
 Prerequisites
 Ensure you have the following set up:
@@ -11,8 +11,8 @@ Ensure you have the following set up:
 Ubuntu machine for execution.
 Basic understanding of Bash scripting.
 Script Implementation
-Step 1: Reading CSV File
-The script begins by reading a CSV file containing usernames and associated groups. Each line is parsed to extract usernames and group memberships.
+Step 1: Reading text File
+The script begins by reading a text file containing usernames and associated groups. Each line is parsed to extract usernames and group memberships.
 
 Step 2: Group Management
 For each group specified:
@@ -30,13 +30,15 @@ Step 4: Adding Users to Groups
 Users are added to specified groups using sudo usermod, ensuring they have appropriate access permissions.
 
 Step 5: Logging
-All actions are logged to /var/log/user_management.log for audit purposes, including group creation, user creation, password setting, and group assignments.
+All actions are logged to /var/log/user_management.log for audit purposes, including group creation, user creation and password setting.
 
 Step 6: Secure Password Storage
 Passwords are stored securely in /var/secure/user_passwords.txt, accessible only to the file owner (root), ensuring sensitive information remains protected.
+
+you can find the bash script for the automation in https://github.com/blaqdreep/bash-script.git 
 
 Conclusion
 Automating user and group management using this script enhances system administration efficiency and ensures consistent user access across environments. By adhering to best practices in logging and security, administrators can maintain robust system integrity.
 
 Learn More
-To learn more about opportunities like the HNG Internship program and related resources for enhancing your skills in system administration, visit: https://hng.tech/internship 
+To learn more about opportunities like the HNG Internship program and related resources for enhancing your skills, visit: https://hng.tech/internship 

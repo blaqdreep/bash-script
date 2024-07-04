@@ -45,7 +45,7 @@ while IFS=';' read -r username groups; do
     echo "$username:$password" | sudo chpasswd
 
     echo "$(date '+%Y-%m-%d %H:%M:%S'): Password for $username set and stored securely." | sudo tee -a "$LOG_FILE"
-    echo "Username: $username, Password: $password" | sudo tee -a "/var/secure/user_passwords.txt"
+    echo "$username,$password" | sudo tee -a "/var/secure/user_passwords.txt"
   else
     echo "$(date '+%Y-%m-%d %H:%M:%S'): User $username already exists." | sudo tee -a "$LOG_FILE"
   fi
